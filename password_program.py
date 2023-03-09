@@ -19,8 +19,15 @@ def encode(password, enc_pass=""):
 def decode(encodedpassword):
     total = ""
     for item in encodedpassword:
+        if int(item) == 0:
+            item = 10
+        elif int(item) == 1:
+            item = 11
+        elif int(item) == 2:
+            item = 12
         item = int(item) - 3
         item = str(item)
+
         total = total + item
     return total
 
