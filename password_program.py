@@ -1,4 +1,3 @@
-
 # Program and encode function by Katherine Blanco
 
 # Defines the function to encode a password
@@ -15,8 +14,16 @@ def encode(password, enc_pass=""):
     print("Your password has been encoded and stored!\n")
     return enc_pass
 
-#### Add decode function here
-#### Add decode function here
+# Decode function written by Tarik Farhoud
+
+def decode(encodedpassword):
+    total = ""
+    for item in encodedpassword:
+        item = int(item) - 3
+        item = str(item)
+        total = total + item
+    return total
+
 
 def main():
 
@@ -40,13 +47,13 @@ def main():
             else:
                 print("Your password isn't long enough. Try again.")
 
-        ##### Add decode function here
-        # # Selects the decode option
-        # elif option == 2:
-        #     if encodedPassword != "":
-        #
-        #     else:
-        #         print("You must encode a password first.\n")
+
+#### Decode function implemented by Tarik Farhoud        
+        elif option == 2:
+            if encodedPassword != "":
+                print(f"The encoded password is {encodedPassword}, and the original password is {decode(encodedPassword)}.")   
+            else:
+                 print("You must encode a password first.\n")
 
         # Quits the program
         elif option == 3:
